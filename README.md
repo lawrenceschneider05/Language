@@ -1,5 +1,6 @@
 # Language
 3 step pipeline:
-Lexing \n
+Lexing
+-Transform *token* 
 Parsing
 Interpreting
