@@ -1,5 +1,5 @@
 # Language
 3 step pipeline:
-Lexing
+Lexing \n
 Parsing
 Interpreting
