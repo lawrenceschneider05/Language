@@ -9,7 +9,7 @@ Steps:
 
 #pragma once
 #include <string>
-#include <vector>
+#include <deque>
 #include "Token.h"
 
 using namespace std;
@@ -25,12 +25,12 @@ namespace Lang
 
 		void debug();
 
-		inline vector<Token>& getTokens() { return mTokens; }
+		inline deque<Token>& getTokens() { return mTokens; }
 
 		inline bool success() { return mSuccess; }
 	private:
 		void addToken(string tok, int pos);
-		vector<Token> mTokens;
+		deque<Token> mTokens;
 		string mProgram;
 		bool mSuccess;
 	};
