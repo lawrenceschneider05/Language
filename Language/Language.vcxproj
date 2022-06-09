@@ -141,7 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\lexer\Lexer.cpp" />
+    <ClCompile Include="src\lexer\Token.cpp" />
     <ClCompile Include="src\sandbox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\lexer\Lexer.h" />
+    <ClInclude Include="src\lexer\Token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
