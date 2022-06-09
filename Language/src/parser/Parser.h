@@ -2,6 +2,7 @@
 #include <deque>
 #include "../lexer/Token.h"
 #include "nodes/Node.h"
+#include "nodes/Root.h"
 
 namespace Lang
 {
@@ -14,7 +15,13 @@ namespace Lang
 		}
 		void parse();
 		string eat(TokenType expected);
+
+		inline void execute()
+		{
+			root->execute();
+		}
 	private:
+		Root* root;
 		std::deque<Token> mTokens{};
 	};
 }

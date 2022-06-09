@@ -1,28 +1,30 @@
 #pragma once
 #include "Node.h"
 #include <iostream>
+#include "Number.h"
 
 namespace Lang
 {
-	class Number : public INode
+	class Plus : public INode
 	{
 	public:
-		Number()
+		Plus()
 		{
 
 		}
 
-		~Number()
+		~Plus()
 		{
 
 		}
 
 		void execute() override
 		{
-			
+			std::cout << (left->number + right->number);
 		}
 
-		int number;
+		Number* left;
+		Number* right;
 	private:
 	};
 }

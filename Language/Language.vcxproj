@@ -147,11 +147,13 @@
     <ClCompile Include="src\sandbox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\interpreter\Interpreter.h" />
     <ClInclude Include="src\lexer\Lexer.h" />
     <ClInclude Include="src\lexer\Token.h" />
     <ClInclude Include="src\parser\nodes\Bracket.h" />
     <ClInclude Include="src\parser\nodes\Node.h" />
     <ClInclude Include="src\parser\nodes\Number.h" />
+    <ClInclude Include="src\parser\nodes\Plus.h" />
     <ClInclude Include="src\parser\Parser.h" />
     <ClInclude Include="src\parser\nodes\Root.h" />
   </ItemGroup>

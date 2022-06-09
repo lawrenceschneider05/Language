@@ -1,5 +1,5 @@
 #pragma once
-#include "nodes/Node.h"
+#include "Node.h"
 #include "Bracket.h"
 
 namespace Lang
