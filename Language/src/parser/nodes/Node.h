@@ -1,20 +1,19 @@
 #pragma once
 namespace Lang
 {
-	class INode
+	class Node
 	{
 	public:
-		INode()
-		{
-		}
-		virtual ~INode()
+
+		virtual ~Node()
 		{
 
 		}
-		virtual void execute()
+		virtual int execute()
 		{
-
+			return 0;
 		}
+		Node* node = nullptr;
 	private:
 	};
 }

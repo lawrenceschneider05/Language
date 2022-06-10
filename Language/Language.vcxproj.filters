@@ -38,19 +38,19 @@
     <ClInclude Include="src\parser\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\interpreter\Interpreter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parser\nodes\Expression.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parser\nodes\Operator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\parser\nodes\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\parser\nodes\Root.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\parser\nodes\Bracket.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\parser\nodes\Number.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\interpreter\Interpreter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\parser\nodes\Plus.h">

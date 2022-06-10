@@ -1,28 +1,19 @@
 #pragma once
-#include "Node.h"
-#include <iostream>
+#include "Expression.h"
 
 namespace Lang
 {
-	class Number : public INode
+	class Number : public Expression
 	{
 	public:
-		Number()
+		Number(int i)
 		{
-
+			number = i;
 		}
-
-		~Number()
+		int execute() override
 		{
-
+			return number;
 		}
-
-		void execute() override
-		{
-			
-		}
-
 		int number;
-	private:
 	};
 }

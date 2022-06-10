@@ -1,46 +1,49 @@
 #include "Parser.h"
-#include "nodes/Node.h"
-#include "nodes/Root.h"
-#include "nodes/Bracket.h"
+#include <iostream>
+#include "nodes/Expression.h"
 #include "nodes/Number.h"
 #include "nodes/Plus.h"
-#include <iostream>
 
 namespace Lang
 {
 	void Parser::parse()
 	{
-		root = new Root();
+		Expression* root = new Expression();
 		eat(TokenType::OpenBracket);
-
-		root->codeBlock = new Bracket();
-		if (mTokens.front().getType() == TokenType::Number)
-		{
-			Number* number = new Number();
-			number->number = std::stoi(eat(TokenType::Number));
-			root->codeBlock->expression = number;
-		}
-
-		if (mTokens.front().getType() == TokenType::Plus)
-		{
-			eat(TokenType::Plus);
-			Plus* plus = new Plus();
-			plus->left = (Number*)root->codeBlock->expression;
-			Number* right = new Number();
-			string s = eat(TokenType::Number);
-
-			right->number = std::stoi(s);
-			plus->right = right;
-			root->codeBlock->expression = plus;
-
-		}
+		parseExpression(root);
 		eat(TokenType::CloseBracket);
+		cout<<root->execute();
 	}
+
+	void Parser::parseExpression(Node* node)
+	{
+		if (peek() == TokenType::Number)
+		{
+			//cout << "Number\n";
+			node->node = new Number(stoi(eat(TokenType::Number)));
+
+			parseExpression(node);
+		}
+		else if (peek() == TokenType::Plus)
+		{
+			// Left
+			Expression* left = &(* (Expression*)node->node);
+			// losing the left value before the plus
+			cout << ((Number*)node->node)->number << "\n";
+			eat(TokenType::Plus);
+			((Plus*)(node->node))->left = left;
+			cout << ((Number*)node->node)->number << "\n";
+			((Plus*)(node->node))->right = new Expression();
+			parseExpression(((Plus*)(node->node))->right);
+		}
+	}
+
 
 	string Parser::eat(TokenType expected)
 	{
 		if (mTokens.front().getType() == expected)
 		{
+			
 			string s = mTokens.front().getText();
 			mTokens.pop_front();
 			return s;

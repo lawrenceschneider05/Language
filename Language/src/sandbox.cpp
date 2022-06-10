@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 	std::deque<int> ints{ 1,2,3 };
 	ints.pop_back();
 	Lexer lex("");
-	lex.lexLine("{1222+122121}");
+	lex.lexLine("{1+122}");
 	for (auto it = lex.getTokens().begin(); it < lex.getTokens().end(); it++)
 	{
 		//std::cout << TokenTypeToString((*it).getType()) << ": " << (*it).getText() << "\n";
